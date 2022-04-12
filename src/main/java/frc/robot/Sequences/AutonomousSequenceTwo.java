@@ -4,7 +4,12 @@
 
 package frc.robot.Sequences;
 
+import edu.wpi.first.wpilibj2.command.ParallelRaceGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
+import frc.robot.Constants;
+import frc.robot.commands.Autonomous.ArmAutonomous;
+import frc.robot.commands.Autonomous.AutonomousDrive;
+import frc.robot.commands.Autonomous.IntakeShooterAutonomous;
 
 // NOTE:  Consider using this command inline, rather than writing a subclass.  For more
 // information, see:
@@ -12,8 +17,52 @@ import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 public class AutonomousSequenceTwo extends SequentialCommandGroup {
   /** Creates a new AutonomousSequenceTwo. */
   public AutonomousSequenceTwo() {
-    // Add your commands in the addCommands() call, e.g.
-    // addCommands(new FooCommand(), new BarCommand());
-    addCommands();
+    addCommands(
+    //drive forward while intaking
+    new ParallelRaceGroup(
+
+      new AutonomousDrive(Constants.Timings.AutonomousTimings.m_autonomousTimeThreeSeconds, 
+      Constants.MotorSpeeds.AutonomousValues.m_xAutoZero,Constants.MotorSpeeds.AutonomousValues.m_yAutoPosOne,
+      Constants.MotorSpeeds.AutonomousValues.m_zAutoZero)
+
+    ,
+    
+    new IntakeShooterAutonomous( Constants.Timings.AutonomousTimings.m_autonomousTimeThreeSeconds, 
+    Constants.MotorSpeeds.IntakeShooterValues.m_intakeMotorSpeed)
+
+    )
+    ,
+      //rotate 90 degrees
+      new AutonomousDrive(Constants.Timings.AutonomousTimings.m_autonomousTimeTwoSeconds,
+      Constants.MotorSpeeds.AutonomousValues.m_xAutoZero, Constants.MotorSpeeds.AutonomousValues.m_yAutoZero, 
+      Constants.MotorSpeeds.AutonomousValues.m_zAutoPosOne )
+      ,
+
+      //Raise Arm
+      new ArmAutonomous(Constants.Timings.AutonomousTimings.m_autonomousTimeTwoSeconds,
+       Constants.MotorSpeeds.ArmValues.m_armRaisingMotorSpeed)
+
+      ,
+
+      //Drive Forward
+      new AutonomousDrive(Constants.Timings.AutonomousTimings.m_autonomousTimeThreeSeconds,
+       Constants.MotorSpeeds.AutonomousValues.m_xAutoZero,
+      Constants.MotorSpeeds.AutonomousValues.m_yAutoPosOne, Constants.MotorSpeeds.AutonomousValues.m_zAutoZero)
+      
+      ,
+
+      new IntakeShooterAutonomous(Constants.Timings.AutonomousTimings.m_autonomousTimeTwoSeconds, 
+      Constants.MotorSpeeds.IntakeShooterValues.m_intakeMotorSpeed)
+
+      ,
+
+      new AutonomousDrive(
+        Constants.Timings.AutonomousTimings.m_autonomousTimeThreeSeconds,Constants.MotorSpeeds.AutonomousValues.m_xAutoZero ,
+        Constants.MotorSpeeds.AutonomousValues.m_yAutoNegOne , Constants.MotorSpeeds.AutonomousValues.m_zAutoZero) 
+
+
+
+
+    );
   }
 }

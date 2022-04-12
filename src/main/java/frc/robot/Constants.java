@@ -48,15 +48,17 @@ public final class Constants {
     public static class ArmValues{
         //invert negative depending on motor orientation
         //Request Way to dettach chain to test without breaking bot
-        public static double m_armRaisingMotorSpeed = -1;
-        public static double m_armLoweringMotorSpeed = 1;
+        public static double m_armRaisingMotorSpeed = -.15;
+        public static double m_armLoweringMotorSpeed = .15;
     }
     public final class AutonomousValues{
        
-        public static final double m_XAutoZero = 0;
+        public static final double m_xAutoZero = 0;
+        public static final double m_yAutoZero = 0;
         public static final double m_yAutoNegOne = -1;
         public static final double m_yAutoPosOne = 1;
         public static final double m_zAutoZero = 0;
+        public static final double m_zAutoPosOne = 1;
         
  }
 }
@@ -100,6 +102,7 @@ public final class Constants {
             public static final double m_autonomousTimeOneSeconds = 1;
             public static final double m_autonomousTimeTwoSeconds = 2;
             public static final double m_autonomousTimeThreeSeconds = 3;
+            public static final double m_autonomousTimeTenSeconds = 10;
          
         }
 

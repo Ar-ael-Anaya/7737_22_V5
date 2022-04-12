@@ -9,12 +9,15 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
 import frc.robot.Robot;
 
-public class ShooterAutonomous extends CommandBase {
+public class IntakeShooterAutonomous extends CommandBase {
   /** Creates a new ShooterAutonomous. */
   Timer m_timer = new Timer();
   double m_time;
-  public ShooterAutonomous(double time) {
+  double m_speed;
+  public IntakeShooterAutonomous(double time, double speed) {
     m_time = time;
+    m_speed = speed;
+
     addRequirements(Robot.m_intakeShooter);
     // Use addRequirements() here to declare subsystem dependencies.
   }
@@ -31,7 +34,7 @@ public class ShooterAutonomous extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    Robot.m_intakeShooter.setIntakeShooterMotorSpeed(Constants.MotorSpeeds.IntakeShooterValues.m_shooterMotorSpeed);
+    Robot.m_intakeShooter.setIntakeShooterMotorSpeed(m_speed);
   }
 
   // Called once the command ends or is interrupted.

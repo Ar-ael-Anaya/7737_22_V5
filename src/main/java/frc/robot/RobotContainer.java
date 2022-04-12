@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.Button;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.Sequences.AutonomousSequenceOne;
+import frc.robot.Sequences.AutonomousSequenceTwo;
 import frc.robot.commands.MecanumDriver;
 import frc.robot.commands.ArmMechanism.ArmLoweringMechanism;
 import frc.robot.commands.ArmMechanism.ArmRaisingMechanism;
@@ -48,8 +49,8 @@ public class RobotContainer {
 
 
 
-    m_chooser.setDefaultOption("Run Forward", new AutonomousSequenceOne());
-    //m_chooser.addOption("Auto Routine Time", new AutonomousTime());
+    m_chooser.setDefaultOption("Auto Sequence 1", new AutonomousSequenceOne());
+    m_chooser.addOption("Auto Sequence 2", new AutonomousSequenceTwo());
     SmartDashboard.putData(m_chooser);
   }
 
