@@ -32,7 +32,7 @@ public class AutonomousSequenceTwo extends SequentialCommandGroup {
 
     )
     ,
-      //rotate 90 degrees
+      //rotate 180 degrees
       new AutonomousDrive(Constants.Timings.AutonomousTimings.m_autonomousTimeTwoSeconds,
       Constants.MotorSpeeds.AutonomousValues.m_xAutoZero, Constants.MotorSpeeds.AutonomousValues.m_yAutoZero, 
       Constants.MotorSpeeds.AutonomousValues.m_zAutoPosOne )
