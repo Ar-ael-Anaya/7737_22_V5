@@ -31,7 +31,7 @@ public class MecanumDriver extends CommandBase {
     
     
  
-    Robot.m_driveTrain.setMotorSpeed(leftStickX, leftStickY, leftStickZ);
+    Robot.m_driveTrain.setMotorSpeed(leftStickX, leftStickY, leftStickZ, Robot.m_gyro.getGyroAngle());
     
   }
 

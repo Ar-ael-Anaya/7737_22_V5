@@ -6,6 +6,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
+import edu.wpi.first.wpilibj.interfaces.Gyro;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.commands.MecanumDriver;
@@ -13,6 +14,7 @@ import frc.robot.commands.IntakeShooterSystem.Shooter;
 import frc.robot.subsystems.Arm;
 import frc.robot.subsystems.Climber;
 import frc.robot.subsystems.DriveTrain;
+import frc.robot.subsystems.GyroSubsystem;
 import frc.robot.subsystems.IntakeShooter;
 
 
@@ -21,7 +23,8 @@ public class Robot extends TimedRobot {
  //Establishing instances of nessesarry classes 
 
  public static MecanumDrive m_robotDrive;
- 
+
+ public static GyroSubsystem m_gyro = new GyroSubsystem();
  public static DriveTrain m_driveTrain = new DriveTrain();
 
  public static IntakeShooter m_intakeShooter = new IntakeShooter();

@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.Sequences.AutonomousSequenceOne;
 import frc.robot.Sequences.AutonomousSequenceTwo;
 import frc.robot.commands.MecanumDriver;
+import frc.robot.commands.ResetGyro;
 import frc.robot.commands.ArmMechanism.ArmLoweringMechanism;
 import frc.robot.commands.ArmMechanism.ArmRaisingMechanism;
 
@@ -57,6 +58,7 @@ public class RobotContainer {
   public RobotContainer() {
     xButton.whenPressed(new ArmLoweringMechanism(Constants.Timings.ArmTimings.m_ArmLoweringTime));
     bButton.whenPressed(new ArmRaisingMechanism(Constants.Timings.ArmTimings.m_ArmRaisingTime));
+    yButton.whenPressed(new ResetGyro());
 
     
     rBumper.whileHeld(new Intake());

@@ -35,7 +35,7 @@ public class AutonomousDrive extends CommandBase {
   @Override
   public void execute() {
     //Was negative last time Auto worked
-    Robot.m_driveTrain.setMotorSpeed(m_xAxis, m_yAxis, m_zAxis);
+    Robot.m_driveTrain.setMotorSpeed(m_xAxis, m_yAxis, m_zAxis,0);
   }
 
 
@@ -46,7 +46,7 @@ public class AutonomousDrive extends CommandBase {
   @Override
   public boolean isFinished() {
     if (m_timer.hasElapsed(m_time)){
-      Robot.m_driveTrain.setMotorSpeed(0 , 0, 0);
+      Robot.m_driveTrain.setMotorSpeed(0 , 0, 0, 0);
       return true;
     }else{
     return false;

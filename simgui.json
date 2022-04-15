@@ -14,6 +14,11 @@
       "window": {
         "visible": true
       }
+    },
+    "RoboRIO": {
+      "window": {
+        "visible": true
+      }
     }
   },
   "NTProvider": {
@@ -21,6 +26,7 @@
       "/FMSInfo": "FMSInfo",
       "/LiveWindow/Arm": "Subsystem",
       "/LiveWindow/Climber": "Subsystem",
+      "/LiveWindow/DriveTrain": "Subsystem",
       "/LiveWindow/Intake": "Subsystem",
       "/LiveWindow/IntakeShooter": "Subsystem",
       "/LiveWindow/Shooter": "Subsystem",
@@ -43,6 +49,11 @@
         }
       },
       "/LiveWindow/Climber": {
+        "window": {
+          "visible": true
+        }
+      },
+      "/LiveWindow/DriveTrain": {
         "window": {
           "visible": true
         }
