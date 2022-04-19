@@ -4,9 +4,9 @@
 
 package frc.robot;
 
+import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
-import edu.wpi.first.wpilibj.interfaces.Gyro;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.commands.MecanumDriver;
@@ -37,8 +37,6 @@ public class Robot extends TimedRobot {
 
  public static MecanumDriver m_mecanumDriver = new MecanumDriver();
 
- //public static ArmLoweringMechanism m_armLoweringMechanism = new ArmLoweringMechanism();
-
  private Command m_autonomousCommand;
   
  public static RobotContainer m_robotContainer = new RobotContainer();
@@ -48,7 +46,12 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
+  
     m_robotContainer = new RobotContainer();
+    
+    Robot.m_gyro.gyroCalibrate();
+    
+    CameraServer.startAutomaticCapture();
   }
  
   @Override

@@ -6,8 +6,10 @@
       }
     },
     "Other Devices": {
-      "window": {
-        "visible": false
+      "ADIS16448[4]": {
+        "header": {
+          "open": true
+        }
       }
     },
     "PWM Outputs": {

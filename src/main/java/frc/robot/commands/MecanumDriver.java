@@ -11,13 +11,8 @@ import frc.robot.Robot;
 public class MecanumDriver extends CommandBase {
   /** Creates a new MecanumDrive. */
   public MecanumDriver() {
-    // Use addRequirements() here to declare subsystem dependencies.
-
     addRequirements(Robot.m_driveTrain);
-
-  }
-
- 
+  } 
 
   @Override
   public void initialize() {}

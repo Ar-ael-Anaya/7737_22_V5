@@ -13,12 +13,12 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.Sequences.AutonomousSequenceOne;
 import frc.robot.Sequences.AutonomousSequenceTwo;
 import frc.robot.commands.MecanumDriver;
-import frc.robot.commands.ResetGyro;
 import frc.robot.commands.ArmMechanism.ArmLoweringMechanism;
 import frc.robot.commands.ArmMechanism.ArmRaisingMechanism;
 
 import frc.robot.commands.ClimbingSystem.LeftLoweringMechanism;
 import frc.robot.commands.ClimbingSystem.LeftRaisingMechanism;
+import frc.robot.commands.Gyro.ResetGyro;
 import frc.robot.commands.IntakeShooterSystem.Shooter;
 import frc.robot.commands.IntakeShooterSystem.Intake;
 
